@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play All Games - 77pen</title>
+    <style>
+        body { margin:0; background:#111; color:#fff; font-family:Arial; }
+        .nav { background:#222; padding:10px; text-align:center; }
+        .nav button { margin:5px; padding:10px 20px; background:#ffcc00; color:#000; border:none; cursor:pointer; }
+        .nav button:hover { background:#ffaa00; }
+        #game-container { text-align:center; padding:20px; }
+        iframe { border:none; width:480px; height:800px; box-shadow:0 0 20px rgba(0,0,0,0.8); }
+        .title { margin:10px; font-size:24px; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <button onclick="loadGame('basketball')">Basketball Stars</button>
+        <button onclick="loadGame('webecome')">We Become What We Behold</button>
+        <button onclick="loadGame('drivemad')">Drive Mad</button>
+    </div>
+    <div class="title">Play All Three Games</div>
+    <div id="game-container">
+        <iframe id="game-frame" src="https://77pen.github.io/p/basketball-stars" allowfullscreen></iframe>
+    </div>
+
+    <script>
+    const games = {
+        basketball: "https://77pen.github.io/p/basketball-stars",
+        webecome: "https://77pen.github.io/p/we-become-what-we-behold.html",
+        drivemad: "https://77pen.github.io/p/drive-mad.html"
+    };
+
+    function loadGame(game) {
+        document.getElementById('game-frame').src = games[game];
+    }
+    </script>
+</body>
+</html>
